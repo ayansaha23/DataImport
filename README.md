@@ -4,7 +4,7 @@ This is an utility tool that is used to import csv file of Attributions into red
 
 There should be redis server running, for any customisations update the redis_host and redis_port config values.
 
-This is a console application and can by
+This is a console application and can be run by
 
 1.Install gems
 ```sh
