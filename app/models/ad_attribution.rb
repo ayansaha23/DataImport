@@ -22,7 +22,7 @@ class AdAttribution
     (first_val..file.last_row).each do |line|
       row = Hash[[header,file.row(line)].transpose]
       key = row["_id"] << "--"<< row["channelid"] << ":#{row["campaignid"]}" << ":#{row["clicktime"]}"
-      val = redis.hset(key, row.except("_id"))
+      val = redis.hset(key, row)
       key = nil
       redis.expire(row["_id"],ttl)
       rows_inserted+=1 if val.positive?
